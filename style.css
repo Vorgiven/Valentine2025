@@ -1,0 +1,166 @@
+body {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    margin:auto;
+    background-color: #FFDEE3;
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+}
+/* 
+C00000 
+FF3334
+FF6F77
+FFBBC1
+FFDEE3
+FF8896
+*/
+#main {
+    border-radius: 10px;
+    position: absolute;
+    margin: auto;
+    width: 50%;
+    height: 100px;
+    border: 3px solid #000000;
+    background-color: #FF8896;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+.floting-header{
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%; 
+}
+.floting-header-video{
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+
+
+#main h1 {
+    text-align: center;
+    /* text-shadow: -2px -2px 0 white,  
+    2px -2px 0 white,  
+   -2px  2px 0 white,  
+    2px  2px 0 white; */
+    color: #C00000;
+    top: 9%;
+    left: 50%;
+}
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    30% {
+        transform: translate(-50%, -40%);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    70% {
+        transform: translate(-50%, -40%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes appearFirst {
+    0% {
+        font-size: 0px;
+    }
+    100% {
+        font-size: 28px;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    opacity: 100%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 7s, bounce 1s infinite;
+}
+#main h2 {
+    animation: appearFirst 2s;
+    font-size: 28px;
+    text-align: center;
+    color: #FFDEE3;
+    top: 2%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+#main h3 {
+    text-align: center;
+    color: #000000;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+#img-left {
+    width: 15%;
+    top: 20%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+#img-right {
+    width: 15%;
+    top: 20%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#buttonDiv {
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+}
+
+#buttonYes, #buttonNo {
+    width: 84px;
+    height: 45px;   
+    color: white;   
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%; 
+}
+
+#buttonYes {
+    background-color: green;
+    top: 60%;
+    left: 40%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#buttonNo {
+    background-color: red;
+    top: 60%;
+    left: 60%;
+    font-size: 16px;
+    font-weight: bold;
+}

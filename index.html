@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Docusdasdasdment</title>
+    <script type="text/javascript">
+        let ranLeft =["10%","90%","60%","20%"]
+        let tries = 0;
+
+        function enter(){
+            let audio = document.getElementById("audio-wrong-click");
+            audio.currentTime = 0;
+            audio.play();
+        }
+        function over()
+        {
+            tries++;
+            let left = Math.random() * (95 - 5) + 5;
+            let top = Math.random() * (95 - 5) + 5;
+            document.getElementById("buttonNo").style.left = left + "%";
+            document.getElementById("buttonNo").style.top = top + "%";
+
+            switch(tries)
+            {
+                case 1:
+                setPrompt("OOPS! I think you almost press the wrong button");
+                break;
+                case 2:
+                setPrompt("HEY! What are you doing");
+                break;
+                case 4:
+                setPrompt("Stop that!");
+                break;
+                case 5:
+                setPrompt("Stop that!");
+                break;
+                case 10:
+                setPrompt("Stop trying to press NO!");
+                break;
+                case 15:
+                setPrompt("😡");
+                break;
+                case 16:
+                setPrompt("😡😡");
+                break;
+                case 17:
+                setPrompt("😡😡😡");
+                break;
+                case 18:
+                setPrompt("😡😡😡😡");
+                break;
+                case 19:
+                setPrompt("😡😡😡😡😡");
+                break;
+                case 20:
+                setPrompt("😡");
+                document.getElementById("text-prompt").style.fontSize="50px";
+                break;
+                case 21:
+                setPrompt("😡");
+                document.getElementById("text-prompt").style.fontSize="60px";
+                break;
+                case 22:
+                setPrompt("😡");
+                document.getElementById("text-prompt").style.fontSize="70px";
+                break;
+                case 23:
+                setPrompt("😡");
+                document.getElementById("text-prompt").style.fontSize="90px";
+                break;
+                case 24:
+                setPrompt("😡");
+                document.getElementById("text-prompt").style.fontSize="100px";
+                break;
+                case 25:
+                setPrompt("😡");
+                document.getElementById("text-prompt").style.fontSize="110px";
+                break;
+                case 26:
+                setPrompt("STOPPPP!!!");
+                document.getElementById("text-prompt").style.fontSize="40px";
+                break;
+                case 30:
+                setPrompt("Just press YESS!!");
+                document.getElementById("text-prompt").style.fontSize="40px";
+                break;
+                case 40:
+                setPrompt("AAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHH");
+                break;
+                case 50:
+                setPrompt("This is going to take a awhile...");
+                break;
+                case 70:
+                setPrompt("");
+                document.getElementById("img-left").style.display ="block";
+                document.getElementById("img-left").style.left ="50%";
+                document.getElementById("img-left").style.top ="40%";
+                document.getElementById("img-left").style.width ="40%";
+                document.getElementById("img-left").src ="gifs/dogHitHead.gif";
+                break;
+                case 100:
+                setPrompt("YOU HAVE NO CHOICE BUT TO PRESS YES NOW");
+                document.getElementById("buttonNo").style.display ="none";
+                document.getElementById("buttonYes").style.left ="50%";
+                document.getElementById("buttonYes").style.width ="50%";
+                document.getElementById("buttonYes").style.height ="25%";
+                break;
+            }
+        }
+        function setPrompt(text){
+            let prompt =document.getElementById("text-prompt");
+            document.getElementById("text-prompt").innerHTML =text;
+        }
+        function YES(){
+            setPrompt("YAYYYYYYY");
+            document.getElementById("buttonYes").style.display ="none";
+            document.getElementById("buttonNo").style.display ="none";
+
+            document.getElementById("img-left").style.top ="50%";
+            document.getElementById("img-left").style.left ="50%";
+            document.getElementById("img-left").style.width ="50%";
+            document.getElementById("img-left").style.zIndex =1;
+            document.getElementById("img-left").src ="gifs/happyCat.gif";
+            document.getElementById("img-left").style.display ="block";
+
+            document.getElementById("img-right").style.width ="100%";
+            document.getElementById("img-right").style.top ="50%";
+            document.getElementById("img-right").style.left ="50%";
+            document.getElementById("img-right").src ="gifs/valentine.gif";
+            document.getElementById("img-right").style.display ="block";
+
+            document.getElementById("audio-happy").loop = true;
+            document.getElementById("audio-happy").play();
+            document.getElementById("audio-bg").pause();
+            // play audio
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h2 class="floting-header"id="to-whom">MARIA CRISTINA CASSANDRA</H2>
+        <h1 class="floting-header"id="h-question">WILL YOU BE MY VALENTINE?</h1>
+        <h3 class="floting-header" id="text-prompt"></H3>
+        <img id="img-left" class="floting-header" src="gifs/happyCat.gif" loop=infinite>
+        <img id="img-right" class="floting-header" src="gifs/valentine.gif" loop=infinite >
+        <div id="buttonDiv">
+            <button id="buttonYes" onclick="YES()">YES</button>
+            <button  id="buttonNo" onmouseover="over()" onmousedown="over()" onmouseenter="enter()">NO</button>
+        </div>
+        <audio id="audio-happy">
+            <source src="audio/HappyCatTheme.wav">
+        </audio>
+        <audio id="audio-bg" autoplay loop>
+            <source src="audio/miawTheme.mp3">
+            <source src="audio/miawTheme.wav">
+        </audio>
+        <audio id="audio-wrong-click">
+            <source src="audio/button-error.wav">
+        </audio>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        var audio = document.getElementById('audio-bg');
+        audio.play();  
+        audio.muted = false; 
+    };
+</script>
+</html>
