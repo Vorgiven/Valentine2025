@@ -152,7 +152,7 @@
         <audio id="audio-happy">
             <source src="audio/HappyCatTheme.wav">
         </audio>
-        <audio id="audio-bg" autoplay loop>
+        <audio id="audio-bg">
             <source src="audio/miawTheme.mp3">
             <source src="audio/miawTheme.wav">
         </audio>
@@ -165,6 +165,7 @@
     window.onload = function() {
         var audio = document.getElementById('audio-bg');
         audio.play();  
+        audio.loop = true; 
         audio.muted = false; 
     };
 </script>
