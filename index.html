@@ -94,16 +94,18 @@
                 break;
                 case 70:
                 setPrompt("");
-                document.getElementById("img-left").style.display ="block";
-                document.getElementById("img-left").style.left ="50%";
-                document.getElementById("img-left").style.top ="40%";
-                document.getElementById("img-left").style.width ="40%";
-                document.getElementById("img-left").src ="gifs/dogHitHead.gif";
+                let imgLeft = document.getElementById("img-left");
+                imgLeft.src ="gifs/dogHitHead.gif";
+                imgLeft.style.display ="block";
+                imgLeft.style.left ="50%";
+                imgLeft.style.top ="40%";
+                imgLeft.style.width ="40%";
                 break;
                 case 100:
                 setPrompt("YOU HAVE NO CHOICE BUT TO PRESS YES NOW");
                 document.getElementById("buttonNo").style.display ="none";
                 document.getElementById("buttonYes").style.left ="50%";
+                    
                 document.getElementById("buttonYes").style.width ="50%";
                 document.getElementById("buttonYes").style.height ="25%";
                 break;
@@ -143,7 +145,7 @@
         <h2 class="floting-header"id="to-whom">MARIA CRISTINA CASSANDRA</H2>
         <h1 class="floting-header"id="h-question">WILL YOU BE MY VALENTINE?</h1>
         <h3 class="floting-header" id="text-prompt"></H3>
-        <img id="img-left" class="floting-header" src="gifs/happyCat.gif" loop=infinite>
+        <img id="img-left" class="floting-header" src="gifs/dogHitHead" loop=infinite>
         <img id="img-right" class="floting-header" src="gifs/valentine.gif" loop=infinite >
         <div id="buttonDiv">
             <button id="buttonYes" onclick="YES()">YES</button>
